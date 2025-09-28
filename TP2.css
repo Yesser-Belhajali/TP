@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+input,button{
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+button.terminer{
+    margin-left: 5px;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.supprimer {
+    margin-left: 5px;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+li.achevee {
+    text-decoration: line-through;
+    color: gray;
+}
