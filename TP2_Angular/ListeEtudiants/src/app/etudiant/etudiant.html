@@ -1,0 +1,23 @@
+<h2>{{ etudiant.name }} Details</h2>
+<table>
+    <tr>
+        <td><strong>id:</strong></td>
+        <td>{{ etudiant.id }}</td>
+    </tr>
+    <tr>
+        <td><strong>name:</strong></td>
+        <td><input  [(ngModel)]="etudiant.name" placeholder="name"></td>
+    </tr>
+    <tr>
+        <td><strong>lastname:</strong></td>
+        <td>{{ etudiant.lastname }}</td>
+    </tr>
+    <tr>
+        <td><strong>classe:</strong></td>
+        <td>{{ etudiant.classe }}</td>
+    </tr>
+    <tr>
+        <td><strong>average:</strong></td>
+        <td>{{ etudiant.average }}</td>
+    </tr>
+</table>
