@@ -1,0 +1,27 @@
+<input type="text" [(ngModel)]="searchText" placeholder="Rechercher...">
+
+<select [(ngModel)]="sortField">
+  <option value="">--Tri--</option>
+  <option value="category">Catégorie</option>
+  <option value="isAvailable">Disponibilité</option>
+</select>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th><th>Author</th><th>Category</th><th>Disponible</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of filteredBooks; trackBy: book.id">
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.isAvailable ? 'Oui' : 'Non'}}</td>
+      <td>
+        <button (click)="edit.emit(book)">Modifier</button>
+        <button (click)="delete.emit(book.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

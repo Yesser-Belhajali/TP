@@ -1,0 +1,14 @@
+<h1>Gestion des livres</h1>
+<app-book-form 
+  [categories]="categories"
+  [book]="editingBook"
+  (submitBook)="editingBook ? updateBook($event) : addBook($event)">
+</app-book-form>
+
+<app-book-list 
+  [books]="books" 
+  (edit)="editBook($event)" 
+  (delete)="deleteBook($event)">
+</app-book-list>
+
+<p>Total des livres : {{ books.length }}</p>

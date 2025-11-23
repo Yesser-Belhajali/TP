@@ -1,0 +1,51 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" novalidate>
+  <div>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="tempBook.title" name="title" id="title" required minlength="3" pattern=".*[a-zA-Z]+.*">
+    <div *ngIf="bookForm.controls['title']?.invalid && bookForm.controls['title']?.dirty" class="error">
+      Titre requis et doit contenir au moins 3 caractères alphabétiques
+    </div>
+  </div>
+
+  <div>
+    <label>Author</label>
+    <input type="text" [(ngModel)]="tempBook.author" name="author" id="author" required minlength="3">
+    <div *ngIf="bookForm.controls['author']?.invalid && bookForm.controls['author']?.dirty" class="error">
+      Auteur requis et au moins 3 caractères
+    </div>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="email" [(ngModel)]="tempBook.publisherEmail" name="publisherEmail" id="publisherEmail" required>
+  </div>
+
+  <div>
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="tempBook.publisherPhone" name="publisherPhone" id="publisherPhone" pattern="^[0-9]{8}$">
+  </div>
+
+  <div>
+    <label>Release Date</label>
+    <input type="date" [(ngModel)]="tempBook.releaseDate" name="releaseDate" id="releaseDate" required>
+  </div>
+
+  <div>
+    <label>Category</label>
+    <select [(ngModel)]="tempBook.category" name="category" id="category" required>
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Disponible</label>
+    <input type="checkbox" [(ngModel)]="tempBook.isAvailable" name="isAvailable" id="isAvailable">
+  </div>
+
+  <div>
+    <label>Stock</label>
+    <input type="number" [(ngModel)]="tempBook.stock" name="stock" id="stock" min="0">
+  </div>
+
+  <button type="submit">{{ book ? 'Mettre à jour' : 'Ajouter' }}</button>
+</form>
