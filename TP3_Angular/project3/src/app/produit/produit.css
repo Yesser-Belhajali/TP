@@ -1,0 +1,9 @@
+.en-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.rupture-stock {
+  color: red;
+  font-weight: bold;
+}
