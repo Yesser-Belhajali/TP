@@ -1,0 +1,12 @@
+.produit {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.produit input {
+  margin-right: 5px;
+  width: 80px;
+}

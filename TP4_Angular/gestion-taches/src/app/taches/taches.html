@@ -1,0 +1,68 @@
+<div class="container">
+
+  <h2>Authentification</h2>
+
+  <input type="text"
+    class="input"
+    [(ngModel)]="username"
+    placeholder="Entrez votre nom d'utilisateur">
+
+  <button class="btn-login" (click)="toggleLogin()">
+    {{ isLoggedIn ? "Se déconnecter" : "Se connecter" }}
+  </button>
+
+  <p *ngIf="message" class="erreur">{{ message }}</p>
+
+  <div *ngIf="isLoggedIn" class="welcome-box">
+    Bienvenue, Yesser !
+  </div>
+
+  <hr>
+
+  <div *ngIf="isLoggedIn">
+
+    <h2>Gestion des tâches</h2>
+
+    <div class="add-box">
+      <input type="text"
+        [(ngModel)]="nouvelleTache"
+        placeholder="Nouvelle tâche"
+        class="input">
+
+      <select [(ngModel)]="nouvellePriorite" class="input">
+        <option value="haute">Haute</option>
+        <option value="moyenne">Moyenne</option>
+        <option value="basse">Basse</option>
+      </select>
+
+      <button class="btn-add" (click)="ajouterTache()">Ajouter</button>
+    </div>
+
+    <div *ngIf="taches.length > 0; else pasDeTaches">
+
+      <div *ngFor="let t of taches; let i = index"
+        class="tache-card"
+        [ngClass]="t.priorite"
+        [ngStyle]="{ 'text-decoration': t.complete ? 'line-through' : 'none' }">
+
+        <p>{{ t.description }}</p>
+
+        <div class="actions">
+          <button class="btn-complete" (click)="basculerStatut(t)">
+            {{ t.complete ? "Annuler" : "Compléter" }}
+          </button>
+
+          <button class="btn-delete" (click)="supprimerTache(i)">
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #pasDeTaches>
+      <p class="empty">Vous n'avez pas de tâches en cours</p>
+    </ng-template>
+
+  </div>
+
+</div>

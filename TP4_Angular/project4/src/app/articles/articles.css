@@ -1,0 +1,27 @@
+.article {
+  padding: 10px;
+  margin: 10px 0;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px;
+}
+
+.important {
+  border-left: 6px solid #e30000;
+  background: #ffe5e5;
+}
+
+.moyen {
+  border-left: 6px solid #ff8c00;
+  background: #fff0e0;
+}
+
+.faible {
+  border-left: 6px solid #3dbf3d;
+  background: #ecffec;
+}

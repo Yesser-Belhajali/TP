@@ -1,0 +1,18 @@
+<h2>Authentification</h2>
+
+<input type="text"
+       [(ngModel)]="username"
+       placeholder="Entrez votre prénom">
+
+<button (click)="toggleLogin()">
+  {{ isLoggedIn ? "Se déconnecter" : "Se connecter" }}
+</button>
+
+<p *ngIf="message"
+   [ngClass]="{ 'success': status === 'success', 'error': status === 'error' }">
+  {{ message }}
+</p>
+
+<p *ngIf="isLoggedIn" class="welcome">
+  Bienvenue, utilisateur !
+</p>
